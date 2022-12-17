@@ -1,1 +1,204 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    height: auto;
+  }
+  
+  header {
+    background-size: cover;
+    width: 100%;
+    background-image: url(./assets/img/banner.jpg);
+  }
+  
+  #nav1 {
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+  }
+  
+  nav {
+    display: flex;
+    font-size: x-large;
+    padding-top: 15px;
+  }
+  
+  #imgarg {
+    margin-top: -32px;
+    scale: .5;
+  }
+  
+  #largo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav div h5 {
+    color: white;
+    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+  }
+  
+  nav div {
+    display: flex;
+  }
+  
+  #items div {
+    font-weight: 500;
+  }
+  
+  #items div a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;  
+    transition: 0.2s;
+  }
+  
+  #items div a:hover {
+    scale: 1.5;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    #banne {
+      padding-top: 120px;
+    }
+    #name {
+      justify-content: center;
+    }
+  }
+  
+  #banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #banner div img {
+    border-radius: 0px 0px 100% 100%;
+    z-index: 1;
+    width: 100%;
+    scale: 0.8;
+  }
+  
+  #info {
+    color: white;
+  }
+  
+  #info h2 {
+    font-size: 90px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+  }
+  
+  #experiencia {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #exp {
+    width: 100vw;
+  }
+
+  #exp h2, #edu h2, #skill h2, #pro h2 {
+    width: 100vw;
+    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+    font-size: 80px;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    text-align: center;
+  }
+  
+  #textexp {
+    position: center;
+    width: 90%;
+    font-size: 30px;
+    padding: 0;
+    background-color: rgba(99, 99, 99, 0.2);
+    border-radius: 45px;
+    margin: 0px 0px 50px 0px;
+    box-shadow: rgb(12, 193, 253) 2px 2px 5px, red 4px 4px 5px;
+  }
+  
+  #drop {
+    display: none;
+  }
+  
+  @media screen and (max-width: 784px) {
+    #largo {
+      display: none;
+    }
+    #drop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    #items div a:hover {
+      scale: 1;
+    }
+    #items, #name {
+      padding: 0;
+    }
+  }
+  
+  @media screen and (max-width: 978px) {
+    #info {
+    scale: .8;
+    }
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  #textcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .progress {
+    width: 75%;
+    margin-bottom: 50px;
+  }
+  
+  #barra {
+    font-size: x-large;
+    font-weight: bold;
+  }
+  
+  .bgColor {
+    transition: all .2s;
+    background-color: rgba(199, 198, 198, 0.891);
+    border-radius: 0px 0px 30px 30px;
+  }
+  
+  .card {
+    color: black;
+    scale: .85;
+  }
+  
+  @media screen and (max-width: 490px) {
+    #exp h2, #edu h2, #skill h2, #pro h2 {
+      scale: .6;
+      text-align: center;
+    }
+  }
+
+  #logomogas, #logoentre {
+    display: flex; 
+    justify-content: center;
+
+  }
