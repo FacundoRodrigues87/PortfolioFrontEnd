@@ -11,5 +11,7 @@ function changeBg(){
 }
 
 
-
+function showModifi() {
+    document.getElementById('modifi').style.display = 'flex';
+}
 
