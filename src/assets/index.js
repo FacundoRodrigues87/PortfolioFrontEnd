@@ -9,9 +9,3 @@ function changeBg(){
         navbar. classList.add('bgColor');
     }
 }
-
-
-function showModifi() {
-    document.getElementById('modifi').style.display = 'flex';
-}
-

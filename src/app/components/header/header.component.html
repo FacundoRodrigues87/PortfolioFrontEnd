@@ -9,8 +9,8 @@
                 <h3 id="infoyo">Mi nombre es Facundo Facundo Rodrigues
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, sequi tenetur ullam veritatis eos voluptate 
                 </h3>
-                <i id="editicon" style="scale: 1.8;" class='bx bx-edit-alt' onclick="showModifi()"></i>
-                <div style="display: none;" id="modifi">
+                <i id="editicon" style="scale: 1.8;" class='bx bx-edit-alt' (click)="showModifi()"></i>
+                <div #modifi id="modifi" style="display: none;">
                     <input id="edit-acerca" type="text">
                     <button type="button" class="btn btn-primary" onclick="enviarParrafo()">Modificar</button>
                     <button type="button" class="btn btn-danger" onclick="cerrarInput()">Cancelar</button>
