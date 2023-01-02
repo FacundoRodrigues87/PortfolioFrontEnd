@@ -9,6 +9,9 @@ import { EduComponent } from './components/edu/edu.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ProyectComponent } from './components/proyect/proyect.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MostrarInputDirective } from './mostrar-input.directive';
+import { ExpitemComponent } from './components/expitem/expitem.component';
+import { EduitemComponent } from './components/eduitem/eduitem.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     EduComponent,
     SkillComponent,
     ProyectComponent,
+    MostrarInputDirective,
+    ExpitemComponent,
+    EduitemComponent,
   ],
   imports: [
     BrowserModule,

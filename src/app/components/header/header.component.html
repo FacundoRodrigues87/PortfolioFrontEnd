@@ -6,14 +6,14 @@
             </div>
             <div id="info" class="col-lg-6">
                 <h2>Acerca de...</h2>
-                <h3 id="infoyo">Mi nombre es Facundo Facundo Rodrigues
+                <h3 #reemplazable id="reemplazable" class="reemplazable">Mi nombre es Facundo Facundo Rodrigues
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, sequi tenetur ullam veritatis eos voluptate 
                 </h3>
                 <i id="editicon" style="scale: 1.8;" class='bx bx-edit-alt' (click)="showModifi()"></i>
                 <div #modifi id="modifi" style="display: none;">
-                    <input id="edit-acerca" type="text">
-                    <button type="button" class="btn btn-primary" onclick="enviarParrafo()">Modificar</button>
-                    <button type="button" class="btn btn-danger" onclick="cerrarInput()">Cancelar</button>
+                    <input #edit id="edit-acerca" type="text">
+                    <button type="button" class="btn btn-primary" (click)="changeContent()">Modificar</button>
+                    <button type="button" class="btn btn-danger" (click)="cerrarInput()">Cancelar</button>
                 </div>
             </div>
         </div>
