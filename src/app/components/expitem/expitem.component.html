@@ -1,4 +1,4 @@
-    <div id="textexp" class="container-fluid">
+    <div #card id="textexp" class="container-fluid">
         <div class="row">
             <div class="col" id="logoentre">
                 <img src="../assets/img/logo.png" alt="">
@@ -8,7 +8,10 @@
                     <h2>{{title}}</h2>
                     <p #reemplazable>Trabajo de diseño web para pagina de ventas</p>
                 </div>
-                <i id="editicon" style="scale: .9;" class='bx bx-edit-alt' (click)="showModifi()"></i>
+                <div id="butts">
+                    <i id="editicon" class='bx bx-edit-alt' (click)="showModifi()"></i>
+                    <i #del id="delicon" class='bx bx-x' (click)="deleteCard()"></i>
+                </div>
                 <div #modifi id="modifi" style="display: none;">
                     <input #edit id="edit-acerca" type="text">
                     <button type="button" class="btn btn-primary" (click)="changeContent()">Modificar</button>

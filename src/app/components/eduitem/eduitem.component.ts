@@ -12,6 +12,9 @@ export class EduitemComponent {
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
   @ViewChild('edit') edit!: ElementRef;
+  @ViewChild('del') del!: ElementRef;
+  @ViewChild('card') card!: ElementRef;
+
 
   showModifi() {
     this.renderer.setStyle(this.modifi.nativeElement, 'display', 'flex');
@@ -25,5 +28,10 @@ export class EduitemComponent {
 
   cerrarInput(){
     this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
+  }
+
+  
+  deleteCard(){
+    this.renderer.setStyle(this.card.nativeElement, 'display', 'none');
   }
 }

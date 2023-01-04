@@ -206,3 +206,21 @@
   #barra {
     display: flex;
 }
+
+#editicon {
+  margin-right: 15px;
+}
+
+#delicon, #editicon {
+  transition: .5s;
+}
+
+#delicon:hover {
+  color: red;
+  scale: 1.5;
+}
+
+#editicon:hover {
+  color: rgb(0, 145, 255);
+  scale: 1.5;
+}
