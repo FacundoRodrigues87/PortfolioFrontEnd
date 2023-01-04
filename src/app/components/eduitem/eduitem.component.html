@@ -1,0 +1,17 @@
+<div id="textexp" class="container-fluid">
+    <div class="row">
+        <div class="col" id="logomogas">
+            <img src="../assets/img/mogas.png" alt="">
+        </div>
+        <div class="col" id="textcard">
+            <h2>Instituto Maria Ana Mogas</h2>
+            <p #reemplazable>Educacion Primaria y Secundaria</p>
+            <i id="editicon" style="scale: .9;" class='bx bx-edit-alt' (click)="showModifi()"></i>
+            <div #modifi id="modifi" style="display: none;">
+                <input #edit id="edit-acerca" type="text">
+                <button type="button" class="btn btn-primary" (click)="changeContent()">Modificar</button>
+                <button type="button" class="btn btn-danger" (click)="cerrarInput()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

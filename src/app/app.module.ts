@@ -9,9 +9,14 @@ import { EduComponent } from './components/edu/edu.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ProyectComponent } from './components/proyect/proyect.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MostrarInputDirective } from './mostrar-input.directive';
 import { ExpitemComponent } from './components/expitem/expitem.component';
 import { EduitemComponent } from './components/eduitem/eduitem.component';
+import { CssbarComponent } from './components/bars/cssbar/cssbar.component';
+import { HtmlbarComponent } from './components/bars/htmlbar/htmlbar.component';
+import { JsbarComponent } from './components/bars/jsbar/jsbar.component';
+import { ComubarComponent } from './components/bars/comubar/comubar.component';
+import { LiderbarComponent } from './components/bars/liderbar/liderbar.component';
+import { TeambarComponent } from './components/bars/teambar/teambar.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,14 @@ import { EduitemComponent } from './components/eduitem/eduitem.component';
     EduComponent,
     SkillComponent,
     ProyectComponent,
-    MostrarInputDirective,
     ExpitemComponent,
     EduitemComponent,
+    CssbarComponent,
+    HtmlbarComponent,
+    JsbarComponent,
+    ComubarComponent,
+    LiderbarComponent,
+    TeambarComponent,
   ],
   imports: [
     BrowserModule,

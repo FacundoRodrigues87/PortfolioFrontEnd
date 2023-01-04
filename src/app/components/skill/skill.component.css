@@ -1,0 +1,11 @@
+.bars {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+app-htmlbar, app-cssbar, app-jsbar, app-liderbar, app-comubar, app-teambar  {
+    width: 80%;
+}

@@ -202,3 +202,7 @@
     justify-content: center;
 
   }
+  
+  #barra {
+    display: flex;
+}
