@@ -228,3 +228,17 @@
   color: rgb(0, 145, 255);
   scale: 1.5;
 }
+
+@media screen and (max-width:711px){
+  #modifi {
+    scale: .7
+    ;
+  }
+}
+
+@media screen and (max-width:510px){
+  #modifi {
+    scale: .5
+    ;
+  }
+}
