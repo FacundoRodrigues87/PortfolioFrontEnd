@@ -17,6 +17,7 @@ import { JsbarComponent } from './components/bars/jsbar/jsbar.component';
 import { ComubarComponent } from './components/bars/comubar/comubar.component';
 import { LiderbarComponent } from './components/bars/liderbar/liderbar.component';
 import { TeambarComponent } from './components/bars/teambar/teambar.component';
+import { FuncionService } from './services/funcion.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { TeambarComponent } from './components/bars/teambar/teambar.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    FuncionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
