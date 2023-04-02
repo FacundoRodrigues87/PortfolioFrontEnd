@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,6 +17,12 @@ import { ComubarComponent } from './components/bars/comubar/comubar.component';
 import { LiderbarComponent } from './components/bars/liderbar/liderbar.component';
 import { TeambarComponent } from './components/bars/teambar/teambar.component';
 import { FuncionService } from './services/funcion.service';
+import { LoginComponent } from './components/login/login.component';
+import { RouterModule } from '@angular/router';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AppRoutingModule } from './app-routing.module';
+import {ReactiveFormsModule } from '@angular/forms'; 
+
 
 @NgModule({
   declarations: [
@@ -36,10 +41,17 @@ import { FuncionService } from './services/funcion.service';
     ComubarComponent,
     LiderbarComponent,
     TeambarComponent,
+    LoginComponent,
+    PortfolioComponent,
+    
+
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     FuncionService
