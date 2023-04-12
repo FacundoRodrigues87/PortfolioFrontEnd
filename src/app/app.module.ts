@@ -16,7 +16,6 @@ import { JsbarComponent } from './components/bars/jsbar/jsbar.component';
 import { ComubarComponent } from './components/bars/comubar/comubar.component';
 import { LiderbarComponent } from './components/bars/liderbar/liderbar.component';
 import { TeambarComponent } from './components/bars/teambar/teambar.component';
-import { FuncionService } from './services/funcion.service';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -54,7 +53,6 @@ import {ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    FuncionService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
 
 declare function changeBg():any;
 
@@ -10,7 +9,7 @@ declare function changeBg():any;
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor (private datosportfolio:DataService) {  }
+  constructor () {  }
   ngOnInit():void {
     changeBg();
   }

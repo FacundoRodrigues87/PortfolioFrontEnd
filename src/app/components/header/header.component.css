@@ -1,3 +1,8 @@
 #editicon{
     font-size: 30px;
 }
+
+#creden {
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+}

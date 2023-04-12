@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
-import { FuncionService } from 'src/app/services/funcion.service';
+
 
 @Component({
   selector: 'app-expitem',
@@ -10,7 +10,7 @@ export class ExpitemComponent {
 
   title = 'Entre Diosas y Reinas';
 
-  constructor(private renderer: Renderer2, private funcion:FuncionService) { }
+  constructor(private renderer: Renderer2) { }
 
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;

@@ -1,5 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
+import { usuario } from 'src/app/model/Usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,13 @@ import { Component, ViewChild, ElementRef, Renderer2, Input } from '@angular/cor
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  usuario: usuario = new usuario("", "", "", "");
+  constructor(private renderer: Renderer2, public usuarioService:UsuarioService) { }
 
-  constructor(private renderer: Renderer2) { }
+  ngOnInit(): void {
+    this.usuarioService.getUser().subscribe(data => {this.usuario = data})
+  }
+
 
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
