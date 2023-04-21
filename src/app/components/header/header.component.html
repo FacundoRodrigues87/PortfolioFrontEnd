@@ -1,24 +1,33 @@
 <header id="head">
-    <div class="container-fluid" id="banne">
-        <div id="banner" class="row">
-            <div id="perf" class="col-lg-6">
-                <img class="img-fluid" src="../assets/img/Perfil.png" alt="yo">
-            </div>
-            <div id="info" class="col-lg-6">
-                <h2>Acerca de...</h2>
-                <div id="creden">
-                    <h3>Nombre: {{usuario.nombre}}</h3>
-                    <h3>Apellido: {{usuario.apellido}}</h3>
-                </div>
-                <h3 #reemplazable id="reemplazable" class="reemplazable">{{usuario.acercade}}
-                </h3>
-                <i id="editicon" class='bx bx-edit-alt' (click)="showModifi()"></i>
-                <div #modifi id="modifi" style="display: none;">
-                    <input #edit id="edit-acerca" type="text">
-                    <button type="button" class="btn btn-primary" (click)="changeContent()">Modificar</button>
-                    <button type="button" class="btn btn-danger" (click)="cerrarInput()">Cancelar</button>
-                </div>
-            </div>
+  <div class="container-fluid" id="banne">
+    <div id="banner" class="row">
+      <div id="perf" class="col-lg-6">
+        <img class="img-fluid" src="../assets/img/Perfil.png" alt="yo" />
+      </div>
+      <div id="info" class="col-lg-6">
+        <h2>Acerca de...</h2>
+        <div id="creden">
+          <h3>Nombre: {{ usuario.nombre }}</h3>
+          <h3>Apellido: {{ usuario.apellido }}</h3>
         </div>
+        <h3 #reemplazable id="reemplazable" class="reemplazable">
+          {{ usuario.acercade }}
+        </h3>
+        <i id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
+        <div #modifi id="modifi" style="display: none">
+          <input #edit id="edit-acerca" type="text" />
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit(); reloadPage()"
+          >
+            Modificar
+          </button>
+          <button type="button" class="btn btn-danger" (click)="cerrarInput()">
+            Cancelar
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </header>

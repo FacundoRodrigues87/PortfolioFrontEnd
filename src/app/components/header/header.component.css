@@ -1,8 +1,14 @@
-#editicon{
-    font-size: 30px;
+#editicon {
+  font-size: 30px;
 }
 
 #creden {
-    color: rgb(255, 255, 255);
-    text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(12, 193, 253) 2px 1px, red 2px 2px;
+}
+
+header {
+  background-size: 2100px;
+  width: 100%;
+  background-image: url(https://static.wixstatic.com/media/5cfe14_30977ca5f4d04cc2a8977a980baf19a9~mv2.gif);
 }

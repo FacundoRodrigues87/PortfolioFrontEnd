@@ -8,9 +8,8 @@ describe('LiderbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LiderbarComponent ]
-    })
-    .compileComponents();
+      declarations: [LiderbarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LiderbarComponent);
     component = fixture.componentInstance;

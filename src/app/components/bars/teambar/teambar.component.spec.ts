@@ -8,9 +8,8 @@ describe('TeambarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TeambarComponent ]
-    })
-    .compileComponents();
+      declarations: [TeambarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TeambarComponent);
     component = fixture.componentInstance;

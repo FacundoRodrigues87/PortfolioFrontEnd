@@ -8,9 +8,8 @@ describe('JsbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JsbarComponent ]
-    })
-    .compileComponents();
+      declarations: [JsbarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(JsbarComponent);
     component = fixture.componentInstance;

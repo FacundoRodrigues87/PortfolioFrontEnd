@@ -1,16 +1,20 @@
-import { Component, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
-
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-expitem',
   templateUrl: './expitem.component.html',
-  styleUrls: ['./expitem.component.css'] 
+  styleUrls: ['./expitem.component.css'],
 })
 export class ExpitemComponent {
-
   title = 'Entre Diosas y Reinas';
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {}
 
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
@@ -23,16 +27,16 @@ export class ExpitemComponent {
   }
 
   changeContent() {
-    let nuevo:string = (this.edit.nativeElement.value);
-    let viejo:string = (this.reemplazable.nativeElement.innerText);
+    let nuevo: string = this.edit.nativeElement.value;
+    let viejo: string = this.reemplazable.nativeElement.innerText;
     this.reemplazable.nativeElement.innerText = nuevo;
   }
 
-  cerrarInput(){
+  cerrarInput() {
     this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
   }
 
-  deleteCard(){
+  deleteCard() {
     this.renderer.setStyle(this.card.nativeElement, 'display', 'none');
   }
 }

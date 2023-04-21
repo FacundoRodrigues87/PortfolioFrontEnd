@@ -8,9 +8,8 @@ describe('CssbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CssbarComponent ]
-    })
-    .compileComponents();
+      declarations: [CssbarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CssbarComponent);
     component = fixture.componentInstance;

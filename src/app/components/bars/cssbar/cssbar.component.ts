@@ -1,14 +1,19 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
-
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-cssbar',
   templateUrl: './cssbar.component.html',
-  styleUrls: ['./cssbar.component.css']
+  styleUrls: ['./cssbar.component.css'],
 })
 export class CssbarComponent {
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {}
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('edit') edit!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
@@ -18,12 +23,12 @@ export class CssbarComponent {
   }
 
   changeContent() {
-    let nuevo = (this.edit.nativeElement.value + '%');
-    let viejo = (this.reemplazable.nativeElement);
-    this.renderer.setStyle(viejo, 'width', nuevo)
+    let nuevo = this.edit.nativeElement.value + '%';
+    let viejo = this.reemplazable.nativeElement;
+    this.renderer.setStyle(viejo, 'width', nuevo);
   }
 
-  cerrarInput(){
+  cerrarInput() {
     this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
   }
 }

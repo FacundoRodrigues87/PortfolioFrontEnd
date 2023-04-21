@@ -1,45 +1,61 @@
-
-    <div id="nav1" class="container-fluid" >
-        <nav id="nav" class="row" >
-            <div class="col-xl-6 col-12 " id="name">
-                <img class="img-fluid" src="../assets/img/Arg programa.png" alt="argprog" id="imgarg">
-                <h5>Argentina Programa #YoProgramo</h5>
-            </div>
-            <div class="col-xl-6 col-12" id="items">
-                <div id="largo">
-                    <div>
-                        <a href="#head">Acerca de</a>
-                    </div>
-                    <div>
-                        <a href="#exp">Experiencia</a>
-                    </div>
-                    <div>
-                        <a href="#edu">Educación</a>
-                    </div>
-                    <div>
-                        <a href="#skill">Skills</a>
-                    </div>
-                    <div>
-                        <a href="#pro">Proyectos</a>
-                    </div>
-                    <div id="log">
-                        <a href="#">Login</a>
-                    </div>
-                </div>
-                <div style="
-                    margin-right: 0px;" id="drop"  class="dropdown col-12">
-                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class='bx bx-menu'></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#info">Acerca de</a></li>
-                                <li><a class="dropdown-item" href="#exp">Experiencia</a></li>
-                                <li><a class="dropdown-item" href="#edu">Educación</a></li>
-                                <li><a class="dropdown-item" href="#skill">Skills</a></li>
-                                <li><a class="dropdown-item" href="#pro">Proyectos</a></li>
-                                <li><a class="dropdown-item" href="#">Login</a></li>
-                        </ul>
-                </div>
-            </div>
-        </nav>
+<div id="nav1" class="container-fluid">
+  <nav id="nav" class="row">
+    <div class="col-xl-6 col-12" id="name">
+      <img
+        class="img-fluid"
+        src="../assets/img/Arg programa.png"
+        alt="argprog"
+        id="imgarg"
+      />
+      <h5>Argentina Programa #YoProgramo</h5>
     </div>
+    <div class="col-xl-6 col-12" id="items">
+      <div id="largo">
+        <div>
+          <a href="#head">Acerca de</a>
+        </div>
+        <div>
+          <a href="#exp">Experiencia</a>
+        </div>
+        <div>
+          <a href="#edu">Educación</a>
+        </div>
+        <div>
+          <a href="#skill">Skills</a>
+        </div>
+        <div>
+          <a href="#pro">Proyectos</a>
+        </div>
+        <div *ngIf="!isLogged">
+          <a href="/login" >LogIn</a>
+        </div>
+        <div *ngIf="isLogged">
+          <a id="logout" href="#" (click)="onLogOut()" >LogOut</a>
+        </div>
+      </div>
+      <div style="margin-right: 0px" id="drop" class="dropdown col-12">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <ul
+          class="dropdown-menu dropdown-menu-dark"
+          aria-labelledby="dropdownMenuButton1"
+        >
+          <li><a class="dropdown-item" href="#info">Acerca de</a></li>
+          <li><a class="dropdown-item" href="#exp">Experiencia</a></li>
+          <li><a class="dropdown-item" href="#edu">Educación</a></li>
+          <li><a class="dropdown-item" href="#skill">Skills</a></li>
+          <li><a class="dropdown-item" href="#pro">Proyectos</a></li>
+          <li><a href="/login" *ngIf="!isLogged">LogIn</a></li>
+          <li><a href="/login" (click)="onLogOut()" *ngIf="isLogged">LogOut</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

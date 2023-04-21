@@ -20,8 +20,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ReactiveFormsModule } from '@angular/forms'; 
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './services/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -42,18 +43,16 @@ import {ReactiveFormsModule } from '@angular/forms';
     TeambarComponent,
     LoginComponent,
     PortfolioComponent,
-    
-
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+  providers: [interceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
