@@ -5,6 +5,10 @@ import {
   Renderer2,
   Input,
 } from '@angular/core';
+import { ExpComponent } from '../exp/exp.component';
+import { SExperienciaService } from 'src/app/services/s-experiencia.service';
+import { TokenService } from 'src/app/services/token.service';
+import { Experiencia } from 'src/app/model/experiencia';
 
 @Component({
   selector: 'app-expitem',
@@ -12,31 +16,65 @@ import {
   styleUrls: ['./expitem.component.css'],
 })
 export class ExpitemComponent {
+  experiencia:Experiencia[] = [];
   title = 'Entre Diosas y Reinas';
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private sExp:SExperienciaService, private tokenService: TokenService) {}
+
+  isLogged = false;
+
+  ngOnInit(): void {
+    this.cargarExp();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+    }
+
+    idExperiencia!: number;
+    nuevaEmpresa!: string;
+
+
+  cargarExp(): void{
+    this.sExp.lista().subscribe(data => {this.experiencia = data;})
+  }
 
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
   @ViewChild('edit') edit!: ElementRef;
   @ViewChild('del') del!: ElementRef;
   @ViewChild('card') card!: ElementRef;
+  @ViewChild('id') id!: ElementRef;
 
-  showModifi() {
-    this.renderer.setStyle(this.modifi.nativeElement, 'display', 'flex');
+  showModifi(modifi: HTMLElement) {
+    modifi.style.display = 'flex';
   }
 
-  changeContent() {
-    let nuevo: string = this.edit.nativeElement.value;
-    let viejo: string = this.reemplazable.nativeElement.innerText;
-    this.reemplazable.nativeElement.innerText = nuevo;
+  onSubmit(id: HTMLElement, edit: HTMLInputElement) {
+    let nuevaEmpresa = edit.value;
+    let idExperiencia = this.idExperiencia = parseInt(id.innerText);
+    this.sExp
+      .editarEmpresa(idExperiencia, nuevaEmpresa)
+      .subscribe(() => {
+        console.log('Descripción "acerca de" actualizada correctamente');
+      });
   }
 
-  cerrarInput() {
-    this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
+  prueba(id: HTMLElement) {
+    this.idExperiencia = parseInt(id.innerText);
+    console.log(this.idExperiencia);
+  }
+
+  cerrarInput(modifi: HTMLElement) {
+    modifi.style.display = 'none';
   }
 
   deleteCard() {
     this.renderer.setStyle(this.card.nativeElement, 'display', 'none');
   }
+  reloadPage() {
+    location.reload();
+  }
+
 }

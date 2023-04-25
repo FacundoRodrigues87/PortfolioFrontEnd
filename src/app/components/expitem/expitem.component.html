@@ -1,26 +1,30 @@
-<div #card id="textexp" class="container-fluid">
+<div *ngFor="let Experiencia of experiencia" #card id="textexp" class="container-fluid">
   <div class="row">
-    <div class="col" id="logoentre">
-      <img src="../assets/img/logo.png" alt="" />
+    <div  class="col" id="logoentre">
+      <img src={{Experiencia.url_foto}} alt="" />
     </div>
     <div class="col" id="textcard">
-      <div id="infoexp1">
-        <h2>{{ title }}</h2>
-        <p #reemplazable>Trabajo de diseño web para pagina de ventas</p>
+      <div id="infoexp1" >
+        <div id="empresa">
+          <h2>{{ Experiencia.empresa }}</h2>
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifi(modifi)"></i>          
+        </div>
+        <div id="descripcion">
+          <p #reemplazable>{{Experiencia.descripcion}}</p>
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifi(modifi)"></i>
+        </div>
       </div>
-      <div id="butts">
-        <i id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
-        <i #del id="delicon" class="bx bx-x" (click)="deleteCard()"></i>
-      </div>
+      <i #del id="delicon" class="bx bx-x" (click)="deleteCard()"></i>
       <div #modifi id="modifi" style="display: none">
-        <input #edit id="edit-acerca" type="text" />
-        <button type="button" class="btn btn-primary" (click)="changeContent()">
+        <input #edit id="edit-acerca" type="text"/>
+        <button type="button" class="btn btn-primary" (click)="onSubmit(id, edit); reloadPage()">
           Modificar
         </button>
-        <button type="button" class="btn btn-danger" (click)="cerrarInput()">
+        <button type="button" class="btn btn-danger" (click)="cerrarInput(modifi)">
           Cancelar
         </button>
       </div>
     </div>
   </div>
+  <h1 #id style="display: none;">{{Experiencia.idExperiencialaboral}}</h1>
 </div>

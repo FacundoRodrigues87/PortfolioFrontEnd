@@ -20,7 +20,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  usuario: usuario = new usuario('', '', '', '');
+  usuario: usuario = new usuario('', '', '', '', []);
 
   idUsuario: number = 0;
 
