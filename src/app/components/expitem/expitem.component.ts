@@ -61,20 +61,20 @@ export class ExpitemComponent {
       });
   }
 
-  prueba(id: HTMLElement) {
-    this.idExperiencia = parseInt(id.innerText);
-    console.log(this.idExperiencia);
-  }
-
   cerrarInput(modifi: HTMLElement) {
     modifi.style.display = 'none';
   }
 
-  deleteCard() {
-    this.renderer.setStyle(this.card.nativeElement, 'display', 'none');
+  deleteexp(id: HTMLElement) {
+    const iddelete = parseInt(id.innerText);
+    this.sExp.delete(iddelete).subscribe(() => {
+      console.log('Experiencia eliminada correctamente');
+    });;
   }
   reloadPage() {
     location.reload();
   }
+
+
 
 }

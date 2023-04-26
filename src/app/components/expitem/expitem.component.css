@@ -2,11 +2,11 @@
   width: 100%;
 }
 #logoentre{
-  max-height: 130px;
+  height: 20vh;
 }
 
 img{
-  width: 100px;
+  max-width: 70%;
 }
 
 #empresa, #descripcion{
