@@ -13,7 +13,7 @@ export class usuario {
     apellido: string,
     acercade: string,
     url_foto: string,
-    experiencias: Experiencia[]
+    experiencias: Experiencia[],
   ) {
     this.nombre = nombre;
     this.apellido = apellido;

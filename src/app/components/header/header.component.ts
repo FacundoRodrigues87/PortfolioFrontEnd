@@ -22,7 +22,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class HeaderComponent {
   usuario: usuario = new usuario('', '', '', '', []);
 
-  idUsuario: number = 0;
+  idUsuario: number = 1;
 
   constructor(
     private renderer: Renderer2,
