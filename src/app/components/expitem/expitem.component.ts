@@ -46,23 +46,33 @@ export class ExpitemComponent {
   @ViewChild('del') del!: ElementRef;
   @ViewChild('card') card!: ElementRef;
   @ViewChild('id') id!: ElementRef;
+  @ViewChild('modifiDesc') modifiDesc!: ElementRef;
+  @ViewChild('editDesc') editDesc!: ElementRef;
 
-  showModifi(modifi: HTMLElement) {
+  showModifiEmpresa(modifi: HTMLElement) {
     modifi.style.display = 'flex';
   }
 
-  onSubmit(id: HTMLElement, edit: HTMLInputElement) {
+  showModifiDesc(modifiDesc: HTMLElement) {
+    modifiDesc.style.display = 'flex';
+  }
+
+  editEmpresa(id: HTMLElement, edit: HTMLInputElement) {
     let nuevaEmpresa = edit.value;
     let idExperiencia = this.idExperiencia = parseInt(id.innerText);
     this.sExp
       .editarEmpresa(idExperiencia, nuevaEmpresa)
       .subscribe(() => {
-        console.log('Descripción "acerca de" actualizada correctamente');
+        console.log('Empresa actualizada correctamente');
       });
   }
 
-  cerrarInput(modifi: HTMLElement) {
+  cerrarInputEmpresa(modifi: HTMLElement) {
     modifi.style.display = 'none';
+  }
+  
+  cerrarInputDescripcion(modifiDesc: HTMLElement) {
+    modifiDesc.style.display = 'none';
   }
 
   deleteexp(id: HTMLElement) {
@@ -75,6 +85,11 @@ export class ExpitemComponent {
     location.reload();
   }
 
-
-
+  editDescripcion(id: HTMLElement, editDesc: HTMLInputElement) {
+    let nuevaDesc = editDesc.value;
+    let idExperiencia = this.idExperiencia = parseInt(id.innerText);
+    this.sExp.editarDescripcion(idExperiencia, nuevaDesc).subscribe(() => {
+      console.log('Descripción actualizada correctamente');
+    });
+  }
 }

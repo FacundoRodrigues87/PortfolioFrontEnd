@@ -38,4 +38,11 @@ export class SExperienciaService {
       {}
     );
   }
+
+  public editarDescripcion(id: number, nuevaDescripcion: string) {
+    return this.HttpClient.put(
+      `${this.expURL}editdesc/${id}?descripcion=${nuevaDescripcion}`,
+      {}
+    );
+  }
 } 

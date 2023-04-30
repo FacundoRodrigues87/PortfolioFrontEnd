@@ -6,6 +6,9 @@ import {
   Renderer2,
   Input,
 } from '@angular/core';
+import { Educacion } from 'src/app/model/educacion';
+import { SEducacionService } from 'src/app/services/educacion.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-eduitem',
@@ -13,7 +16,11 @@ import {
   styleUrls: ['./eduitem.component.css'],
 })
 export class EduitemComponent {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private sEdu:SEducacionService, private tokenService: TokenService) {}
+  educacion:Educacion[] = [];
+  isLogged = false;
+  idEducacion!: number;
+
 
   @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
@@ -21,21 +28,61 @@ export class EduitemComponent {
   @ViewChild('del') del!: ElementRef;
   @ViewChild('card') card!: ElementRef;
 
-  showModifi() {
-    this.renderer.setStyle(this.modifi.nativeElement, 'display', 'flex');
+
+  ngOnInit(): void{
+    this.cargarEdu();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+    }
+
+  cargarEdu(): void{
+    this.sEdu.lista().subscribe(data => {this.educacion = data;})
+  }
+  showModifiEmpresa(modifi: HTMLElement) {
+    modifi.style.display = 'flex';
   }
 
-  changeContent() {
-    let nuevo: string = this.edit.nativeElement.value;
-    let viejo: string = this.reemplazable.nativeElement.innerText;
-    this.reemplazable.nativeElement.innerText = nuevo;
+  showModifiDesc(modifiDesc: HTMLElement) {
+    modifiDesc.style.display = 'flex';
   }
 
-  cerrarInput() {
-    this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
+  editInstituto(id: HTMLElement, edit: HTMLInputElement) {
+    let nuevaEmpresa = edit.value;
+    let idEducacion = this.idEducacion = parseInt(id.innerText);
+    this.sEdu
+      .editarInstituto(idEducacion, nuevaEmpresa)
+      .subscribe(() => {
+        console.log('Empresa actualizada correctamente');
+      });
   }
 
-  deleteCard() {
-    this.renderer.setStyle(this.card.nativeElement, 'display', 'none');
+  cerrarInputEmpresa(modifi: HTMLElement) {
+    modifi.style.display = 'none';
+  }
+
+  cerrarInputDescripcion(modifiDesc: HTMLElement) {
+    modifiDesc.style.display = 'none';
+  }
+
+  deleteexp(id: HTMLElement) {
+    const iddelete = parseInt(id.innerText);
+    this.sEdu.delete(iddelete).subscribe(() => {
+      console.log('Experiencia eliminada correctamente');
+    });;
+  }
+  reloadPage() {
+    location.reload();
+  }
+
+  editDescr(id: HTMLElement, editDesc: HTMLInputElement) {
+    let nuevaDesc = editDesc.value;
+    let idEducacion = this.idEducacion = parseInt(id.innerText);
+    this.sEdu.editarDesc(idEducacion, nuevaDesc).subscribe(() => {
+      console.log('Descripción actualizada correctamente');
+    });
   }
 }
+

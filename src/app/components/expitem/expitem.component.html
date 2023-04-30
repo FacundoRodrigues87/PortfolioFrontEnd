@@ -7,24 +7,34 @@
       <div id="infoexp1" >
         <div id="empresa">
           <h2>{{ Experiencia.empresa }}</h2>
-          <i id="editicon" class="bx bx-edit-alt" (click)="showModifi(modifi)"></i>          
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiEmpresa(modifi)"></i>          
         </div>
         <div id="descripcion">
           <p #reemplazable>{{Experiencia.descripcion}}</p>
-          <i id="editicon" class="bx bx-edit-alt" (click)="showModifi(modifi)"></i>
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiDesc(modifiDesc)"></i>
         </div>
       </div>
       <i #del id="delicon" class="bx bx-x" (click)="deleteexp(id); reloadPage()"></i>
       <div #modifi id="modifi" style="display: none">
-        <input #edit id="edit-acerca" type="text"/>
-        <button type="button" class="btn btn-primary" (click)="onSubmit(id, edit); reloadPage()">
+        <label for="empresa">Ingrese el nombre de la empresa</label>
+        <input #edit id="edit-acerca" type="text" name="empresa"/>
+        <button type="button" class="btn btn-primary" (click)="editEmpresa(id, edit); reloadPage()">
           Modificar
         </button>
-        <button type="button" class="btn btn-danger" (click)="cerrarInput(modifi)">
+        <button type="button" class="btn btn-danger" (click)="cerrarInputEmpresa(modifi)">
           Cancelar
         </button>
       </div>
-    </div>
+        <div #modifiDesc id="modifi" style="display: none">
+          <label for="descripcion">Ingrese la descripcion</label>
+          <input #editDesc id="edit-acerca" type="text" name="descripcion"/>
+          <button type="button" class="btn btn-primary" (click)="editDescripcion(id, editDesc); reloadPage()">
+            Modificar
+          </button>
+          <button type="button" class="btn btn-danger" (click)="cerrarInputDescripcion(modifiDesc)">
+            Cancelar
+          </button>
+      </div>
   </div>
   <h1 #id style="display: none;">{{Experiencia.idExperiencialaboral}}</h1>
 </div>

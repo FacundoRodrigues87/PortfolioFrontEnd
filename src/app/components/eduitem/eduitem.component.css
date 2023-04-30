@@ -1,3 +1,22 @@
 #textexp {
   width: 100%;
 }
+#logoentre{
+  height: 20vh;
+}
+
+img{
+  max-width: 70%;
+}
+
+#empresa, #descripcion{
+  display: flex;
+  justify-content: space-between;
+}
+
+#infoexp1 {
+  width: 90%;
+}
+.row{
+  padding: 20px;
+}

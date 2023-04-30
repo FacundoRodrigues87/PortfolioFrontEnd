@@ -1,24 +1,41 @@
-<div #card id="textedu" class="container-fluid">
+<div *ngFor="let Educacion of educacion" #card id="textexp" class="container-fluid">
   <div class="row">
-    <div class="col" id="logomogas">
-      <img src="../assets/img/mogas.png" alt="" />
+    <div  class="col" id="logoentre">
+      <img src={{Educacion.url_foto}} alt="" />
     </div>
     <div class="col" id="textcard">
-      <h2>Instituto Maria Ana Mogas</h2>
-      <p #reemplazable>Educacion Primaria y Secundaria</p>
-      <div id="butts">
-        <i id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
-        <i #del id="delicon" class="bx bx-x" (click)="deleteCard()"></i>
+      <div id="infoexp1" >
+        <div id="empresa">
+          <h2>{{ Educacion.instituto }}</h2>
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiEmpresa(modifi)"></i>
+        </div>
+        <div id="descripcion">
+          <p #reemplazable>{{Educacion.descripcion}}</p>
+          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiDesc(modifiDesc)"></i>
+        </div>
       </div>
+      <i #del id="delicon" class="bx bx-x" (click)="deleteexp(id); reloadPage()"></i>
       <div #modifi id="modifi" style="display: none">
-        <input #edit id="edit-acerca" type="text" />
-        <button type="button" class="btn btn-primary" (click)="changeContent()">
+        <label for="empresa">Ingrese el nombre de la empresa</label>
+        <input #edit id="edit-acerca" type="text" name="empresa"/>
+        <button type="button" class="btn btn-primary" (click)="editInstituto(id, edit); reloadPage()">
           Modificar
         </button>
-        <button type="button" class="btn btn-danger" (click)="cerrarInput()">
+        <button type="button" class="btn btn-danger" (click)="cerrarInputEmpresa(modifi)">
           Cancelar
         </button>
       </div>
-    </div>
+        <div #modifiDesc id="modifi" style="display: none">
+          <label for="descripcion">Ingrese la descripcion</label>
+          <input #editDesc id="edit-acerca" type="text" name="descripcion"/>
+          <button type="button" class="btn btn-primary" (click)="editDescr(id, editDesc); reloadPage()">
+            Modificar
+          </button>
+          <button type="button" class="btn btn-danger" (click)="cerrarInputDescripcion(modifiDesc)">
+            Cancelar
+          </button>
+      </div>
   </div>
+  <h1 #id style="display: none;">{{Educacion.idEducacion}}</h1>
 </div>
+

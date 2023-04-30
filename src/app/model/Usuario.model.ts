@@ -1,3 +1,4 @@
+import { Educacion } from "./educacion";
 import { Experiencia } from "./experiencia";
 
 export class usuario {
@@ -7,6 +8,7 @@ export class usuario {
   acercade: string;
   url_foto: string;
   experiencias: Experiencia[];
+  educaciones: Educacion[];
 
   constructor(
     nombre: string,
@@ -14,11 +16,13 @@ export class usuario {
     acercade: string,
     url_foto: string,
     experiencias: Experiencia[],
+    educaciones:Educacion[]
   ) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.acercade = acercade;
     this.url_foto = url_foto;
     this.experiencias = experiencias;
+    this.educaciones = educaciones;
   }
 }

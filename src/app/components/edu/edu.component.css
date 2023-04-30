@@ -1,4 +1,4 @@
-#items {
+.items {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -8,3 +8,24 @@
 app-eduitem {
   width: 90%;
 }
+
+#creardiv{
+  width: 100vw;
+  display: flex;
+}
+
+#crear{
+  margin-left: 110px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 445px){
+  #creardiv {
+    justify-content: center;
+    align-items: center;
+  }
+  #crear{
+    margin-left: 0px;
+  }
+}
+
