@@ -84,5 +84,9 @@ export class EduitemComponent {
       console.log('Descripción actualizada correctamente');
     });
   }
+  isUserAdmin(): boolean {
+    const roles = this.tokenService.getAuthorities();
+    return roles.includes('ROLE_ADMIN');
+  }
 }
 

@@ -7,14 +7,14 @@
       <div id="infoexp1" >
         <div id="empresa">
           <h2>{{ Educacion.instituto }}</h2>
-          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiEmpresa(modifi)"></i>
+          <i *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showModifiEmpresa(modifi)"></i>
         </div>
         <div id="descripcion">
           <p #reemplazable>{{Educacion.descripcion}}</p>
-          <i id="editicon" class="bx bx-edit-alt" (click)="showModifiDesc(modifiDesc)"></i>
+          <i *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showModifiDesc(modifiDesc)"></i>
         </div>
       </div>
-      <i #del id="delicon" class="bx bx-x" (click)="deleteexp(id); reloadPage()"></i>
+      <i #del *ngIf="isUserAdmin()" id="delicon" class="bx bx-x" (click)="deleteexp(id); reloadPage()"></i>
       <div #modifi id="modifi" style="display: none">
         <label for="empresa">Ingrese el nombre de la empresa</label>
         <input #edit id="edit-acerca" type="text" name="empresa"/>

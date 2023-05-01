@@ -4,6 +4,8 @@ import {
   ElementRef,
   Renderer2,
   Input,
+  AfterViewChecked,
+  AfterViewInit,
 } from '@angular/core';
 import { ExpComponent } from '../exp/exp.component';
 import { SExperienciaService } from 'src/app/services/s-experiencia.service';
@@ -16,12 +18,21 @@ import { Experiencia } from 'src/app/model/experiencia';
   styleUrls: ['./expitem.component.css'],
 })
 export class ExpitemComponent {
-  experiencia:Experiencia[] = [];
   title = 'Entre Diosas y Reinas';
 
-  constructor(private renderer: Renderer2, private sExp:SExperienciaService, private tokenService: TokenService) {}
 
+  constructor(private renderer: Renderer2, private sExp:SExperienciaService, private tokenService: TokenService) {}
+  @ViewChild('modifi') modifi!: ElementRef;
+  @ViewChild('reemplazable') reemplazable!: ElementRef;
+  @ViewChild('edit') edit!: ElementRef;
+  @ViewChild('del') del!: ElementRef;
+  @ViewChild('card') card!: ElementRef;
+  @ViewChild('id') id!: ElementRef;
+  @ViewChild('modifiDesc') modifiDesc!: ElementRef;
+  @ViewChild('editDesc') editDesc!: ElementRef;
+  experiencia:Experiencia[] = [];
   isLogged = false;
+  isAdmin = false;
 
   ngOnInit(): void {
     this.cargarExp();
@@ -32,6 +43,7 @@ export class ExpitemComponent {
     }
     }
 
+
     idExperiencia!: number;
     nuevaEmpresa!: string;
 
@@ -40,14 +52,7 @@ export class ExpitemComponent {
     this.sExp.lista().subscribe(data => {this.experiencia = data;})
   }
 
-  @ViewChild('modifi') modifi!: ElementRef;
-  @ViewChild('reemplazable') reemplazable!: ElementRef;
-  @ViewChild('edit') edit!: ElementRef;
-  @ViewChild('del') del!: ElementRef;
-  @ViewChild('card') card!: ElementRef;
-  @ViewChild('id') id!: ElementRef;
-  @ViewChild('modifiDesc') modifiDesc!: ElementRef;
-  @ViewChild('editDesc') editDesc!: ElementRef;
+
 
   showModifiEmpresa(modifi: HTMLElement) {
     modifi.style.display = 'flex';
@@ -70,7 +75,7 @@ export class ExpitemComponent {
   cerrarInputEmpresa(modifi: HTMLElement) {
     modifi.style.display = 'none';
   }
-  
+
   cerrarInputDescripcion(modifiDesc: HTMLElement) {
     modifiDesc.style.display = 'none';
   }
@@ -91,5 +96,10 @@ export class ExpitemComponent {
     this.sExp.editarDescripcion(idExperiencia, nuevaDesc).subscribe(() => {
       console.log('Descripción actualizada correctamente');
     });
+  }
+
+  isUserAdmin(): boolean {
+    const roles = this.tokenService.getAuthorities();
+    return roles.includes('ROLE_ADMIN');
   }
 }

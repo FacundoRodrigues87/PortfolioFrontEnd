@@ -11,6 +11,7 @@ import { Educacion } from 'src/app/model/educacion';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SEducacionService } from 'src/app/services/educacion.service';
 import { SExperienciaService } from 'src/app/services/s-experiencia.service';
+import { TokenService } from 'src/app/services/token.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -19,7 +20,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./edu.component.css'],
 })
 export class EduComponent {
-  constructor(private renderer: Renderer2, private sEdu:SEducacionService, private usuarioService:UsuarioService) {}
+  constructor(private renderer: Renderer2, private sEdu:SEducacionService, private usuarioService:UsuarioService, private tokenService:TokenService) {}
 
   idUsuario = new usuario ('', '', '', '', [], [])
 
@@ -57,5 +58,10 @@ export class EduComponent {
 
   reloadPage() {
     location.reload();
+  }
+
+  isUserAdmin(): boolean {
+    const roles = this.tokenService.getAuthorities();
+    return roles.includes('ROLE_ADMIN');
   }
 }

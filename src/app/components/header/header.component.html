@@ -13,7 +13,7 @@
         <h3 #reemplazable id="reemplazable" class="reemplazable">
           {{ usuario.acercade }}
         </h3>
-        <i id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
+        <i *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
         <div #modifi id="modifi" style="display: none">
           <input #edit id="edit-acerca" type="text" />
           <button

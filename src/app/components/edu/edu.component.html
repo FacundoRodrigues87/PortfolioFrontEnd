@@ -3,7 +3,7 @@
     <h2>Educacion</h2>
   </div>
   <div id="creardiv">
-    <button id="crear" type="button" class="btn btn-primary" (click)="showNueva()">Crear nueva Educacion</button>
+    <button *ngIf="isUserAdmin()" id="crear" type="button" class="btn btn-primary" (click)="showNueva()">Crear nueva Educacion</button>
   </div>
   <div #nuevaexp style="display: none;" id="textexp" class="container-fluid">
     <div class="row">

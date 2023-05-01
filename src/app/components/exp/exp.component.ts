@@ -9,6 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 import { usuario } from 'src/app/model/Usuario.model';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/services/s-experiencia.service';
+import { TokenService } from 'src/app/services/token.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -17,7 +18,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./exp.component.css'],
 })
 export class ExpComponent {
-  constructor(private renderer: Renderer2, private sExp:SExperienciaService, private usuarioService:UsuarioService) {}
+  constructor(private renderer: Renderer2, private sExp:SExperienciaService, private usuarioService:UsuarioService, private tokenService:TokenService) {}
 
   idUsuario = new usuario ('', '', '', '', [], [])
 
@@ -55,5 +56,10 @@ export class ExpComponent {
 
   reloadPage() {
     location.reload();
+  }
+
+  isUserAdmin(): boolean {
+    const roles = this.tokenService.getAuthorities();
+    return roles.includes('ROLE_ADMIN');
   }
 }

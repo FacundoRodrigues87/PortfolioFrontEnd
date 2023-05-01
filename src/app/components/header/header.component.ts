@@ -13,6 +13,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -28,6 +29,7 @@ export class HeaderComponent {
     private renderer: Renderer2,
     public usuarioService: UsuarioService,
     private http: HttpClient,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
@@ -66,13 +68,12 @@ export class HeaderComponent {
       });
   }
 
-  getUsers(): any {
-    const url = this.URL + `/users/list`;
-    const hola = this.http.get<usuario>(JSON.stringify(url));
-    return console.log(hola);
-  }
-
   cerrarInput() {
     this.renderer.setStyle(this.modifi.nativeElement, 'display', 'none');
+  }
+
+  isUserAdmin(): boolean {
+    const roles = this.tokenService.getAuthorities();
+    return roles.includes('ROLE_ADMIN');
   }
 }
