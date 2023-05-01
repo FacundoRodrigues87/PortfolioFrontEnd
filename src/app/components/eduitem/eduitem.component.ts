@@ -71,8 +71,9 @@ export class EduitemComponent {
     const iddelete = parseInt(id.innerText);
     this.sEdu.delete(iddelete).subscribe(() => {
       console.log('Experiencia eliminada correctamente');
-    });;
+    });
   }
+  
   reloadPage() {
     location.reload();
   }

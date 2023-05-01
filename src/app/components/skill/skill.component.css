@@ -6,11 +6,34 @@
   align-items: center;
 }
 
-app-htmlbar,
-app-cssbar,
-app-jsbar,
-app-liderbar,
-app-comubar,
-app-teambar {
+app-bars {
   width: 80%;
 }
+
+#creardiv{
+  width: 100vw;
+  display: flex;
+}
+#crear{
+  margin-left: 225px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 604px){
+  #creardiv {
+    justify-content: center;
+    align-items: center;
+  }
+  #crear{
+    margin-left: 0px;
+  }
+}
+
+#infoexp1, #buttons{
+  display: flex;
+  justify-content: space-around;
+}
+#textexp{
+  margin: auto;
+  margin-bottom: 40px;
+  }

@@ -1,32 +1,30 @@
 <div id="experiencia">
-  <div id="exp">
+  <div id="edu">
     <h2>Educacion</h2>
   </div>
-  <div id="creardiv">
-    <button *ngIf="isUserAdmin()" id="crear" type="button" class="btn btn-primary" (click)="showNueva()">Crear nueva Educacion</button>
-  </div>
-  <div #nuevaexp style="display: none;" id="textexp" class="container-fluid">
-    <div class="row">
-      <div  class="col" id="logoentre">
-        <label for="urlfoto">Ingrese el URL de la foto</label>
-        <input type="text" name="urlfoto" #urlfoto>
-      </div>
-      <div class="col" id="textcard">
-        <div id="infoexp1" >
-          <div id="empresa">
-            <label for="empresa">Ingrese el nombre de la institucion</label>
-            <input #empre type="text" name="empresa" #urlfoto>
-          </div>
-          <div id="descripcion">
-            <label for="descripcion">Ingrese la descripción de la educacion</label>
-            <input #desc type="text" name="descripcion" #urlfoto>
-          </div>
-        </div>
-        </div>
+  <div *ngIf="isUserAdmin()" >
+    <div id="creardiv">
+      <button id="crear" type="button" class="btn btn-primary" (click)="showNueva()">Crear nueva Educacion</button>
     </div>
-    <div id="buttons">
-      <button type="button" class="btn btn-success" (click)="crearExp(); reloadPage()">Crear Educacion</button>
-      <button type="button" class="btn btn-danger" (click)="cancelNueva()">Cancelar</button>
+    <div style="display: none;" #nuevaexp id="textexp" class="row">
+      <div id="infoexp1" class="col-10">
+        <div id="logoentre">
+          <label for="urlfoto">Ingrese el URL de la foto</label>
+          <input type="text" name="urlfoto" #urlfoto>
+        </div>
+            <div id="empresa">
+              <label for="empresa">Ingrese el nombre de la institucion</label>
+              <input #empre type="text" name="empresa" #urlfoto>
+            </div>
+            <div id="descripcion">
+              <label for="descripcion">Ingrese la descripción de la educacion</label>
+              <input #desc type="text" name="descripcion" #urlfoto>
+            </div>
+      </div>
+      <div class="col-2" id="buttons">
+        <button type="button" class="btn btn-success" (click)="crearExp(); reloadPage()">Crear Educacion</button>
+        <button type="button" class="btn btn-danger" (click)="cancelNueva()">Cancelar</button>
+      </div>
     </div>
   </div>
   <div class="items">

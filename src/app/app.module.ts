@@ -10,12 +10,7 @@ import { ProyectComponent } from './components/proyect/proyect.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExpitemComponent } from './components/expitem/expitem.component';
 import { EduitemComponent } from './components/eduitem/eduitem.component';
-import { CssbarComponent } from './components/bars/cssbar/cssbar.component';
-import { HtmlbarComponent } from './components/bars/htmlbar/htmlbar.component';
-import { JsbarComponent } from './components/bars/jsbar/jsbar.component';
-import { ComubarComponent } from './components/bars/comubar/comubar.component';
-import { LiderbarComponent } from './components/bars/liderbar/liderbar.component';
-import { TeambarComponent } from './components/bars/teambar/teambar.component';
+import {BarsComponent } from './components/bars/bars.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -35,12 +30,7 @@ import { interceptorProvider } from './services/interceptor-service';
     ProyectComponent,
     ExpitemComponent,
     EduitemComponent,
-    CssbarComponent,
-    HtmlbarComponent,
-    JsbarComponent,
-    ComubarComponent,
-    LiderbarComponent,
-    TeambarComponent,
+    BarsComponent,
     LoginComponent,
     PortfolioComponent,
   ],
