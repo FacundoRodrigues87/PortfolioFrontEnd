@@ -1,7 +1,46 @@
-#pros {
-  padding-right: 0;
-}
 
 #propo {
   width: 100vw;
+}
+
+#proyectos{
+  display: flex;
+  justify-content: space-around;
+}
+
+#creardiv{
+  width: 100vw;
+  display: flex;
+}
+
+#crear{
+  margin-left: 110px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 445px){
+  #creardiv {
+    justify-content: center;
+    align-items: center;
+  }
+  #crear{
+    margin-left: 0px;
+  }
+}
+#buttons{
+  display: flex;
+  justify-content: space-between;
+  scale: .9;
+}
+
+#infoexp1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#textexp{
+  margin: auto;
+  margin-bottom: 40px;
 }

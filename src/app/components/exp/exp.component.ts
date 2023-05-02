@@ -20,7 +20,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ExpComponent {
   constructor(private renderer: Renderer2, private sExp:SExperienciaService, private usuarioService:UsuarioService, private tokenService:TokenService) {}
 
-  idUsuario = new usuario ('', '', '', '', [], [], [])
+  idUsuario = new usuario ('', '', '', '', [], [], [], [])
 
   @ViewChild('nuevaexp') nuevaexp!: ElementRef;
   @ViewChild('urlfoto') urlfoto!: ElementRef;

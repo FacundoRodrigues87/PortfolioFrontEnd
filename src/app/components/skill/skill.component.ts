@@ -13,7 +13,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class SkillComponent {
   constructor(private renderer: Renderer2, private sSkills:SkillsService, private usuarioService:UsuarioService, private tokenService:TokenService){
   }
-  idUsuario = new usuario ('', '', '', '', [], [], [])
+  idUsuario = new usuario ('', '', '', '', [], [], [], [])
 
   @ViewChild('nuevaexp') nuevaexp!: ElementRef;
   @ViewChild('empre') empre!: ElementRef;
@@ -49,7 +49,7 @@ export class SkillComponent {
   reloadPage() {
     location.reload();
   }
-  
+
   isUserAdmin(): boolean {
     const roles = this.tokenService.getAuthorities();
     return roles.includes('ROLE_ADMIN');

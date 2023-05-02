@@ -2,34 +2,35 @@
   <div id="pro">
     <h2>Proyectos</h2>
   </div>
-  <div id="propo" class="row">
-    <div id="pros" class="col-xl-6">
-      <div class="card">
-        <img
-          class="card-img-top"
-          src="../assets/img/umo.jpg"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">UMO Store</h5>
-          <p class="card-text">Pagina Web Responsive para un restaurante</p>
-          <a href="#" class="btn btn-primary">Ir al sitio</a>
-        </div>
-      </div>
+  <div *ngIf="isUserAdmin()" >
+    <div id="creardiv">
+      <button id="crear" type="button" class="btn btn-primary" (click)="showNueva()">Crear nuevo Proyecto</button>
     </div>
-    <div id="pros" class="col-xl-6">
-      <div class="card">
-        <img
-          class="card-img-top"
-          src="../assets/img/umo.jpg"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">UMO Store</h5>
-          <p class="card-text">Pagina Web Responsive para un restaurante</p>
-          <a href="#" class="btn btn-primary">Ir al sitio</a>
+    <div #nuevaexp style="display: none;" id="textexp" class="row">
+      <div  id="infoexp1" class="col-10">
+        <div>
+          <label for="urlfoto">Ingrese el URL de la foto</label>
+          <input type="text" name="urlfoto" #urlfoto>
         </div>
+            <div id="empresa">
+              <label for="empresa">Ingrese el nombre del Proyecto</label>
+              <input #empre type="text" name="empresa">
+            </div>
+            <div id="descripcion">
+              <label for="descripcion">Ingrese la descripción del proyecto</label>
+              <input #desc type="text" name="descripcion">
+            </div>
+            <div id="urlpro">
+              <label for="urlpro">Ingrese la URL del proyecto</label>
+              <input #urlpro type="text" name="urlpro">
+            </div>
+      </div>
+      <div class="col-2" id="buttons">
+        <button type="button" class="btn btn-success" (click)="CrearPro(); reloadPage()">Crear Proyecto</button>
+        <button type="button" class="btn btn-danger" (click)="cancelNueva()">Cancelar</button>
       </div>
     </div>
   </div>
-</div>
+  <div id="proyectos">
+    <app-ProyectItem></app-ProyectItem>
+  </div>

@@ -22,7 +22,6 @@ export class EduitemComponent {
   idEducacion!: number;
 
 
-  @ViewChild('modifi') modifi!: ElementRef;
   @ViewChild('reemplazable') reemplazable!: ElementRef;
   @ViewChild('edit') edit!: ElementRef;
   @ViewChild('del') del!: ElementRef;
@@ -41,6 +40,7 @@ export class EduitemComponent {
   cargarEdu(): void{
     this.sEdu.lista().subscribe(data => {this.educacion = data;})
   }
+  
   showModifiEmpresa(modifi: HTMLElement) {
     modifi.style.display = 'flex';
   }
@@ -73,7 +73,7 @@ export class EduitemComponent {
       console.log('Experiencia eliminada correctamente');
     });
   }
-  
+
   reloadPage() {
     location.reload();
   }

@@ -28,18 +28,17 @@ app-eduitem {
     margin-left: 0px;
   }
 }
-#infoexp1, #buttons{
+#buttons{
   display: flex;
   justify-content: space-between;
   scale: .9;
 }
-
-#empresa, #descripcion{
-  margin-left: 20px;
+#infoexp1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
+
+
 #textexp{
   margin: auto;
   margin-bottom: 40px;

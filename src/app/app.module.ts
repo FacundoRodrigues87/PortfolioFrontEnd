@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
+import { ProyectItemComponent } from './components/ProyectItem/ProyectItem.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { interceptorProvider } from './services/interceptor-service';
     BarsComponent,
     LoginComponent,
     PortfolioComponent,
+    ProyectItemComponent
   ],
   imports: [
     BrowserModule,

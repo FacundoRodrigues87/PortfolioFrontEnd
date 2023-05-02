@@ -1,0 +1,43 @@
+<div class="row">
+  <div *ngFor="let Proyecto of proyectos" id="pros" class="col" >
+    <h1 #id style="display: none;">{{Proyecto.idProyecto}}</h1>
+    <div class="card">
+      <img
+      #img
+        class="card-img-top"
+        src={{Proyecto.urlImagen}}/>
+      <div class="card-body">
+        <h5 class="card-title">{{Proyecto.title}}</h5>
+        <p class="card-text">{{Proyecto.descripcion}}</p>
+        <a href={{Proyecto.urlProyecto}} class="btn btn-primary">Ir al sitio</a>
+        <i style="scale: 2; margin-left: 30px;" *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showUpdate(modifi)"></i>
+        <i style="scale: 2.5; margin-left: 30px;" #del *ngIf="isUserAdmin()" id="delicon" class="bx bx-x" (click)="deletepro(id); reloadPage()"></i>
+      </div>
+      </div>
+        <div #modifi style="display: none;" id="textexp" class="row">
+          <div  id="infoexp1" class="col-10">
+            <div id="logoentre">
+              <label for="urlfoto">Ingrese el URL de la foto</label>
+              <input type="text" name="urlfoto" #urlfoto>
+            </div>
+                <div id="empresa">
+                  <label for="empresa">Ingrese el nombre del Proyecto</label>
+                  <input #empre type="text" name="empresa">
+                </div>
+                <div id="descripcion">
+                  <label for="descripcion">Ingrese la descripción del proyecto</label>
+                  <input #desc type="text" name="descripcion">
+                </div>
+                <div id="urlpro">
+                  <label for="urlpro">Ingrese la URL del proyecto</label>
+                  <input #urlpro type="text" name="urlpro">
+                </div>
+          </div>
+          <div class="col-2" id="buttons">
+            <button type="button" class="btn btn-success" (click)="editPro(id, empre, desc, urlfoto, urlpro); reloadPage()">Editar Proyecto</button>
+            <button type="button" class="btn btn-danger" (click)="cerrarUpdate(modifi)">Cancelar</button>
+          </div>
+        </div>
+    </div>
+</div>
+

@@ -22,7 +22,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class EduComponent {
   constructor(private renderer: Renderer2, private sEdu:SEducacionService, private usuarioService:UsuarioService, private tokenService:TokenService) {}
 
-  idUsuario = new usuario ('', '', '', '', [], [], [])
+  idUsuario = new usuario ('', '', '', '', [], [], [], [])
 
   @ViewChild('nuevaexp') nuevaexp!: ElementRef;
   @ViewChild('urlfoto') urlfoto!: ElementRef;

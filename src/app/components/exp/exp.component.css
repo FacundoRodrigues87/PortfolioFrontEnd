@@ -28,19 +28,21 @@ app-expitem {
     margin-left: 0px;
   }
 }
-#infoexp1, #buttons{
+
+#buttons{
   display: flex;
   justify-content: space-between;
   scale: .9;
 
 }
 
-#empresa, #descripcion{
-  margin-left: 20px;
+#infoexp1 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
+
+
 #textexp{
   margin: auto;
   margin-bottom: 40px;
