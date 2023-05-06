@@ -15,7 +15,7 @@
         </div>
       </div>
       <i #del *ngIf="isUserAdmin()" id="delicon" class="bx bx-x" (click)="deleteexp(id); reloadPage()"></i>
-      <div #modifi id="modifi" style="display: none">
+      <div  #modifi id="modifi" style="display: none" >
         <label for="empresa">Ingrese el nombre de la empresa</label>
         <input #edit id="edit-acerca" type="text" name="empresa"/>
         <button type="button" class="btn btn-primary" (click)="editEmpresa(id, edit); reloadPage()">

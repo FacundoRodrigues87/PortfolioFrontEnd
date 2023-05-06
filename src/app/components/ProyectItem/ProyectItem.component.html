@@ -12,8 +12,6 @@
         <a href={{Proyecto.urlProyecto}} class="btn btn-primary">Ir al sitio</a>
         <i style="scale: 2; margin-left: 30px;" *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showUpdate(modifi)"></i>
         <i style="scale: 2.5; margin-left: 30px;" #del *ngIf="isUserAdmin()" id="delicon" class="bx bx-x" (click)="deletepro(id); reloadPage()"></i>
-      </div>
-      </div>
         <div #modifi style="display: none;" id="textexp" class="row">
           <div  id="infoexp1" class="col-10">
             <div id="logoentre">
@@ -39,5 +37,8 @@
           </div>
         </div>
     </div>
+      </div>
+      </div>
+
 </div>
 
