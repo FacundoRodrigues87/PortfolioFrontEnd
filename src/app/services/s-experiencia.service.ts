@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class SExperienciaService {
 
-  expURL = 'http://localhost:8080/explaboral/';
+  expURL = 'https://backend-portfolio-9sgt.onrender.com/explaboral/';
 
   constructor(private HttpClient:HttpClient) { }
 
@@ -45,4 +45,4 @@ export class SExperienciaService {
       {}
     );
   }
-} 
+}

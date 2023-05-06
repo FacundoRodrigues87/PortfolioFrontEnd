@@ -9,7 +9,7 @@ import { usuario } from '../model/Usuario.model';
   providedIn: 'root',
 })
 export class UsuarioService {
-  URL = 'http://localhost:8080';
+  URL = 'https://backend-portfolio-9sgt.onrender.com';
 
   constructor(private http: HttpClient) {}
 
