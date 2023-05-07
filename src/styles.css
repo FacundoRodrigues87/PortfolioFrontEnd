@@ -245,3 +245,20 @@ nav div {
     scale: 0.5;
   }
 }
+
+@media screen and (max-width: 787px) {
+  #locura {
+    display: flex;
+    flex-direction: column;
+  }
+  #logoentre {
+    scale: .8;
+  }
+}
+
+@media screen and (max-width: 964px) {
+  #proyecto {
+    display: flex;
+    flex-direction: column;
+  }
+}

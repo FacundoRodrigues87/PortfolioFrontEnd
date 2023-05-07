@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
 import { ProyectItemComponent } from './components/ProyectItem/ProyectItem.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

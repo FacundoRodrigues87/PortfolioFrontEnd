@@ -52,8 +52,8 @@
           <li><a class="dropdown-item" href="#edu">Educación</a></li>
           <li><a class="dropdown-item" href="#skill">Skills</a></li>
           <li><a class="dropdown-item" href="#pro">Proyectos</a></li>
-          <li><a href="/login" *ngIf="!isLogged">LogIn</a></li>
-          <li><a href="/login" (click)="onLogOut()" *ngIf="isLogged">LogOut</a></li>
+          <li><a class="logdrop" href="/login" *ngIf="!isLogged">LogIn</a></li>
+          <li><a class="logdrop" href="/login" (click)="onLogOut()" *ngIf="isLogged">LogOut</a></li>
         </ul>
       </div>
     </div>
