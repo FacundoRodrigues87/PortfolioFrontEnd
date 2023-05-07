@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './services/interceptor-service';
 import { ProyectItemComponent } from './components/ProyectItem/ProyectItem.component';
+import { FooterComponent } from './components/footer/footer/footer.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ProyectItemComponent } from './components/ProyectItem/ProyectItem.compo
     BarsComponent,
     LoginComponent,
     PortfolioComponent,
-    ProyectItemComponent
+    ProyectItemComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
