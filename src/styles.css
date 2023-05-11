@@ -60,7 +60,7 @@ nav div {
   scale: 1.5;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1504px) {
   #banne {
     padding-top: 120px;
   }
