@@ -1,5 +1,4 @@
 body {
-  background: #00bbff00;
   padding-top: 60px;
   padding-bottom: 40px;
 }
@@ -111,5 +110,4 @@ border-color: #125688;
 #redes{
   display: flex;
   justify-content: space-evenly;
-  background-color: rgb(27, 27, 27);
 }
