@@ -1,10 +1,11 @@
 <header id="head">
+  <app-navbar></app-navbar>
   <div class="container-fluid" id="banne">
     <div id="banner" class="row">
       <div id="perf" class="col-lg-6">
         <img class="img-fluid" src="../assets/img/Perfil.png" alt="yo" />
       </div>
-      <div id="info" class="col-lg-6">
+      <div *ngIf="contenidoInfo" id="info" class="col-lg-6">
         <div class="stack" style="--stacks: 3;">
           <span style="--index: 0; font-size: 80px;">Acerca de...</span>
           <span style="--index: 1; font-size: 80px;">Acerca de...</span>
@@ -15,7 +16,7 @@
           <h3>Apellido: {{ usuario.apellido }}</h3>
         </div>
         <h3 #reemplazable id="reemplazable" class="reemplazable">
-          {{ usuario.acercade }}
+          Soy un estudiante de Licenciatura en Ciencias Computacionales en la UBA, y actualmente me encuentro finalizando el curso Argentina Programa. Este es mi portfolio!
         </h3>
         <i *ngIf="isUserAdmin()" id="editicon" class="bx bx-edit-alt" (click)="showModifi()"></i>
         <div #modifi id="modifi" style="display: none">

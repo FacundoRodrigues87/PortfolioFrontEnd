@@ -22,7 +22,7 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class HeaderComponent {
   usuario: usuario = new usuario('', '', '', '', [], [], [], []);
-
+  public contenidoInfo: string | null = null;
   idUsuario: number = 1;
 
   constructor(
@@ -35,6 +35,7 @@ export class HeaderComponent {
   ngOnInit() {
     this.usuarioService.getUser().subscribe((data) => {
       this.usuario = data;
+      this.contenidoInfo = this.usuario.acercade;
     });
     this.usuarioService.getUsers().subscribe((usuarios: any) => {
       console.log(usuarios);
